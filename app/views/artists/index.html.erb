@@ -1,8 +1,14 @@
-<h1>Hotttnesss Chart</h1>
-<ul>
-  <% @artists.each do |artist| %>
-  <li>
-    <%= artist.name %>
-  </li>
-  <% end %>
+<h1>Still Hunted</h1>
+<h4>Top 100 Artists</h4>
+<hr>
+
+<ul id="artist-list" class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
 </ul>
+
+<script id='artistview-template' type='text/x-handlebars-template'>
+  <div>
+    <p><strong>{{ name }}</strong><p>
+    <p>{{ hotttnesss }}</p>
+  </div>
+</script>
+

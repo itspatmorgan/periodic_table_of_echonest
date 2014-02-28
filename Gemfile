@@ -18,6 +18,9 @@ gem 'echowrap', '~> 0.1.2'
 # Directly call API
 gem 'httparty'
 
+# Foundation Front-end Framework
+gem 'foundation-rails'
+
 group :test do 
   gem 'rspec-rails'
 end
