@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: still_hunted_development
+  pool: 5
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: still_hunted_test
+  pool: 5
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: still_hunted_production
+  pool: 5
