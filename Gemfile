@@ -13,7 +13,10 @@ gem 'jquery-rails'
 gem 'sass-rails', '~> 4.0.0'
 
 # Tap into the Echonest API for music data
-gem "echowrap", "~> 0.1.2"
+gem 'echowrap', '~> 0.1.2'
+
+# Directly call API
+gem 'httparty'
 
 group :test do 
   gem 'rspec-rails'
