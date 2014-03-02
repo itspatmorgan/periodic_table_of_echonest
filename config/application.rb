@@ -28,6 +28,6 @@ module StillHunted
     # For deploying to Heroku
     config.assets.initialize_on_precompile = false
 
-    config.assets.precompile += ['javascripts/libraries/backbone.js', 'javascripts/libraries/handlebars.js', 'javascripts/libraries/jquery.js', 'javascripts/libraries/underscore.js', 'javascripts/app.js']
+    config.serve_static_assets = true
   end
 end
