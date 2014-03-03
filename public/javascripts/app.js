@@ -5,7 +5,7 @@ var Artist = Backbone.Model.extend({
 // ** Individual Artist View ** //
 var ArtistView = Backbone.View.extend({
   events: {
-    "click" : "placeholder"
+    "click" : "renderTooltip"
   },
 
   tagName: 'li',
@@ -15,6 +15,10 @@ var ArtistView = Backbone.View.extend({
   render: function(){
     this.$el.html(this.template(this.model.attributes));
     return this;
+  },
+
+  renderTooltip: function(){
+    alert("Hey, it's working")
   }
 });
 
@@ -26,6 +30,21 @@ var ArtistCollection = Backbone.Collection.extend({
 
   initialize: function(){
     this.fetch()
+  },
+
+  sort_key: 'hotttnesss',
+
+  comparator: function(a, b){
+    a = a.get(this.sort_key);
+    b = b.get(this.sort_key);
+    return a < b ? 1
+          : a > b ? -1
+          : 0;
+  },
+
+  sortByField: function(fieldName){
+    this.sort_key = fieldName;
+    this.sort();
   },
 });
 
@@ -49,7 +68,7 @@ var ArtistListView = Backbone.View.extend({
     _.each(this.collection.models, function(artist){
       self.renderArtist(artist);
     });
-  }
+  },
 });
 
 var artist_collection, ArtistView, ArtistListView

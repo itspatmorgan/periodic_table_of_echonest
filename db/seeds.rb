@@ -31,3 +31,5 @@ end
 # similar_artist_query = "http://developer.echonest.com/api/v4/artist/similar?api_key=#{echonest_key}&id=#{ARTISTID}&format=json&results=5&bucket=hotttnesss&bucket=familiarity&bucket=discovery&bucket=artist_location&bucket=urls"
 
 # song_api_query = http://developer.echonest.com/api/v4/song/search?api_key=LNXHREDQVF9MNEBD3&format=json&results=20&bucket=song_hotttnesss&bucket=song_currency&bucket=artist_hotttnesss&bucket=artist_familiarity&bucket=artist_discovery&bucket=audio_summary&sort=song_hotttnesss-desc
+
+# http://developer.echonest.com/api/v4/artist/top_hottt?api_key=LNXHREDQVF9MNEBD3&format=json&results=100&bucket=hotttnesss&bucket=familiarity&bucket=discovery&bucket=artist_location&bucket=urls&bucket=images&bucket=genre
