@@ -14,8 +14,20 @@
  *= require_tree .
  */
 
-#artist-list div {
-  height: 250px;
-  width: auto;
-  background-color: lightblue;
- }
+/*#artist-list div {
+  background: lightblue;
+}*/
+
+#artist-list .ui-selected {
+  background: lightblue;
+}
+
+.sub-nav {
+  text-align: center;
+}
+
+.header {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 70px;
+}

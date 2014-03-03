@@ -5,7 +5,7 @@ var Artist = Backbone.Model.extend({
 // ** Individual Artist View ** //
 var ArtistView = Backbone.View.extend({
   events: {
-    "click" : "renderTooltip"
+    "click" : "showInfo"
   },
 
   tagName: 'li',
@@ -17,10 +17,17 @@ var ArtistView = Backbone.View.extend({
     return this;
   },
 
-  renderTooltip: function(){
-    alert("Hey, it's working")
+  showInfo: function(){ 
+    id = this.model.attributes.echonest_id
+
+    if ( $( "#"+id ).is( ":hidden" ) ) {
+      $( "#"+id ).show( "slow" );
+    } else {
+      $( "#"+id ).slideUp();
+    }
   }
 });
+
 
 //** Collection **//
 var ArtistCollection = Backbone.Collection.extend({
@@ -72,23 +79,7 @@ var ArtistListView = Backbone.View.extend({
 
 });
 
-var addSortingEventListeners = function(){
-
-  $("#familiarity_nav").click(function(){
-    artist_collection.sortByField("familiarity");
-    artist_list_view.render();
-    $("#familiarity_nav").addClass("active");
-    $("#hotttnesss_nav").removeClass("active");
-    $("#discovery_nav").removeClass("active");
-  });
-
-  $("#discovery_nav").click(function(){
-    artist_collection.sortByField("discovery");
-    artist_list_view.render();
-    $("#discovery_nav").addClass("active");
-    $("#familiarity_nav").removeClass("active");
-    $("#hotttnesss_nav").removeClass("active");
-  });
+var addEventListeners = function(){
 
   $("#hotttnesss_nav").click(function(){
     artist_collection.sortByField("hotttnesss");
@@ -97,6 +88,24 @@ var addSortingEventListeners = function(){
     $("#familiarity_nav").removeClass("active");
     $("#discovery_nav").removeClass("active");
   });
+
+  $("#familiarity_nav").click(function(){
+    artist_collection.sortByField("familiarity");
+    artist_list_view.render();
+    $("#hotttnesss_nav").removeClass("active");
+    $("#familiarity_nav").addClass("active");
+    $("#discovery_nav").removeClass("active");
+  });
+
+  $("#discovery_nav").click(function(){
+    artist_collection.sortByField("discovery");
+    artist_list_view.render();
+    $("#hotttnesss_nav").removeClass("active");
+    $("#familiarity_nav").removeClass("active");
+    $("#discovery_nav").addClass("active");
+  });
+
+  $("#artist-list").selectable();
 };
 
 var artist_collection, ArtistView, ArtistListView
@@ -106,5 +115,5 @@ $(function(){
   artist_view = new ArtistView();
   artist_list_view = new ArtistListView({collection: artist_collection, el: $('#artist-list')});
 
-  addSortingEventListeners();
+  addEventListeners();
 });
