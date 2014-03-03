@@ -2,7 +2,7 @@
 <%= render partial: "nav" %>
 
 <!-- Header --> 
-<h1 class="header"> Still HUNTED </h1>
+<h1 class="header"><strong>Still HUNTED</strong></h1>
 
 <!-- Sub Nav for Sorting list -->
 <dl class="sub-nav">
@@ -13,16 +13,13 @@
 </dl>
 
 <!-- Main list -->
-<ul id="artist-list" class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
-</ul>
+<ul id="artist-list" class="small-block-grid-2 medium-block-grid-3 large-block-grid-4"></ul>
 
 <!-- Template for rendering artist view -->
 <script id='artistview-template' type='text/x-handlebars-template'>
-  <div><p><strong>{{ name }}</strong><p><div>
+  <div id="card_name"><strong>{{ name }}</strong><div>
   <div id={{echonest_id}}>
-    <p>hotness: {{ hotttnesss }}</p>
-    <p>familiarity: {{ familiarity }}</p>
-    <p>discovery: {{ discovery }}</p>
+    <p>Hello</p>
   </div>
 </script>
 

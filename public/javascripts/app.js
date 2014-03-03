@@ -5,7 +5,8 @@ var Artist = Backbone.Model.extend({
 // ** Individual Artist View ** //
 var ArtistView = Backbone.View.extend({
   events: {
-    "click" : "showInfo"
+    "click" : "showInfo",
+    "mouseover" : "select"
   },
 
   tagName: 'li',
@@ -25,6 +26,16 @@ var ArtistView = Backbone.View.extend({
     } else {
       $( "#"+id ).slideUp();
     }
+  },
+
+  select: function(){
+    $( "#artist-list li" ).hover(
+      function() { 
+        $( this ).addClass("hovered");
+      }, function() {
+        $( this ).removeClass("hovered")
+      }
+    );
   }
 });
 
@@ -104,8 +115,6 @@ var addEventListeners = function(){
     $("#familiarity_nav").removeClass("active");
     $("#discovery_nav").addClass("active");
   });
-
-  $("#artist-list").selectable();
 };
 
 var artist_collection, ArtistView, ArtistListView

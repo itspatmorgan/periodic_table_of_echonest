@@ -14,13 +14,9 @@
  *= require_tree .
  */
 
-/*#artist-list div {
+/*#artist-list .ui-selected {
   background: lightblue;
 }*/
-
-#artist-list .ui-selected {
-  background: lightblue;
-}
 
 .sub-nav {
   text-align: center;
@@ -30,4 +26,19 @@
   text-align: center;
   margin: 0 auto;
   margin-top: 70px;
+}
+
+.hovered {
+  background-color: lightblue;
+}
+
+#card_name {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 75px;
+}
+
+#artist-list li {
+  height: 250px;
+  border: 1px solid black;
 }
