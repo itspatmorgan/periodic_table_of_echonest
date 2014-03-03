@@ -14,12 +14,16 @@ var ArtistView = Backbone.View.extend({
   template: Handlebars.compile($('#artistview-template').html()),
 
   render: function(){
+    var hot = parseInt(Math.pow(255,this.model.attributes.hotttnesss));
     this.$el.html(this.template(this.model.attributes));
+    this.$el.css({"background-color": "rgba("+hot+",75,150,1)"});
+    // this.$el.css('background-image', 'url(' + this.model.attributes.photo_url + ')');
+    // this.$el.css('background-size', 'contain');
     return this;
   },
 
   showInfo: function(){ 
-    id = this.model.attributes.echonest_id
+    var id = this.model.attributes.echonest_id
 
     if ( $( "#"+id ).is( ":hidden" ) ) {
       $( "#"+id ).show( "slow" );
@@ -38,7 +42,6 @@ var ArtistView = Backbone.View.extend({
     );
   }
 });
-
 
 //** Collection **//
 var ArtistCollection = Backbone.Collection.extend({

@@ -14,20 +14,6 @@
  *= require_tree .
  */
 
-/*#artist-list .ui-selected {
-  background: lightblue;
-}*/
-
-.sub-nav {
-  text-align: center;
-}
-
-.header {
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 70px;
-}
-
 .hovered {
   background-color: lightblue;
 }
@@ -41,4 +27,9 @@
 #artist-list li {
   height: 250px;
   border: 1px solid black;
+}
+
+.header {
+  text-align: center;
+  margin-top: 70px;
 }

@@ -2,18 +2,20 @@
 <%= render partial: "nav" %>
 
 <!-- Header --> 
-<h1 class="header"><strong>Still HUNTED</strong></h1>
+<div class="header">
+  <h1><strong>Still HUNTED</strong></h1>
 
-<!-- Sub Nav for Sorting list -->
-<dl class="sub-nav">
-  <dt>Filter:</dt>
-  <dd class="active" id="hotttnesss_nav"><a href="#">Hotttnesss</a></dd>
-  <dd id="familiarity_nav"><a href="#">Familiarity</a></dd>
-  <dd id="discovery_nav"><a href="#">Discovery</a></dd>
-</dl>
+  <!-- Sub Nav for Sorting list -->
+  <dl class="sub-nav">
+    <dt>Filter:</dt>
+    <dd class="active" id="hotttnesss_nav"><a href="#">Hotttnesss</a></dd>
+    <dd id="familiarity_nav"><a href="#">Familiarity</a></dd>
+    <dd id="discovery_nav"><a href="#">Discovery</a></dd>
+  </dl>
+</div>
 
 <!-- Main list -->
-<ul id="artist-list" class="small-block-grid-2 medium-block-grid-3 large-block-grid-4"></ul>
+<ul id="artist-list" class="small-block-grid-1 medium-block-grid-3 large-block-grid-4"></ul>
 
 <!-- Template for rendering artist view -->
 <script id='artistview-template' type='text/x-handlebars-template'>
