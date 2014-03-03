@@ -69,7 +69,35 @@ var ArtistListView = Backbone.View.extend({
       self.renderArtist(artist);
     });
   },
+
 });
+
+var addSortingEventListeners = function(){
+
+  $("#familiarity_nav").click(function(){
+    artist_collection.sortByField("familiarity");
+    artist_list_view.render();
+    $("#familiarity_nav").addClass("active");
+    $("#hotttnesss_nav").removeClass("active");
+    $("#discovery_nav").removeClass("active");
+  });
+
+  $("#discovery_nav").click(function(){
+    artist_collection.sortByField("discovery");
+    artist_list_view.render();
+    $("#discovery_nav").addClass("active");
+    $("#familiarity_nav").removeClass("active");
+    $("#hotttnesss_nav").removeClass("active");
+  });
+
+  $("#hotttnesss_nav").click(function(){
+    artist_collection.sortByField("hotttnesss");
+    artist_list_view.render();
+    $("#hotttnesss_nav").addClass("active");
+    $("#familiarity_nav").removeClass("active");
+    $("#discovery_nav").removeClass("active");
+  });
+};
 
 var artist_collection, ArtistView, ArtistListView
 
@@ -77,4 +105,6 @@ $(function(){
   artist_collection = new ArtistCollection();
   artist_view = new ArtistView();
   artist_list_view = new ArtistListView({collection: artist_collection, el: $('#artist-list')});
+
+  addSortingEventListeners();
 });
