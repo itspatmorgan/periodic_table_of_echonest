@@ -30,7 +30,10 @@
 .sub-nav dd {
   float: none;
 }
-
+.sub-nav dd a {
+  color: black;
+  font-weight: bold;
+}
 .sub-nav dd.active a {
   background: black;
 }
