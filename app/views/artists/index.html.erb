@@ -15,15 +15,17 @@
 </div>
 
 <!-- Main list -->
-<ul id="artist-list" class="small-block-grid-1 medium-block-grid-3 large-block-grid-4"></ul>
+<ul id="artist-list" class="small-block-grid-1 medium-block-grid-2 large-block-grid-4"></ul>
 
 <!-- Template for rendering artist view -->
 <script id='artistview-template' type='text/x-handlebars-template'>
-  <div id="card_name">
-    <a href={{lastfm_url}} target="blank"><strong>{{ name }}</strong></a>
-  </div>
-  <div id={{echonest_id}}>
-    <p>{{hotttnesss}}% | {{familiarity}}% | {{discovery}}%</p>
+  <div id="card">
+    <div id="card_name">
+      <a href={{lastfm_url}} target="blank"><strong>{{ name }}</strong></a>
+    </div>
+    <div id={{echonest_id}}>
+      <p>{{hotttnesss}}% | {{familiarity}}% | {{discovery}}%</p>
+    </div>
   </div>
 </script>
 

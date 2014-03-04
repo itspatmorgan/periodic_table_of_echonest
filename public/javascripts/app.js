@@ -4,20 +4,18 @@ var Artist = Backbone.Model.extend({
 
 // ** Individual Artist View ** //
 var ArtistView = Backbone.View.extend({
-  events: {
-    // "click" : "showInfo",
-    "mouseover" : "select"
-  },
 
   tagName: 'li',
 
   template: Handlebars.compile($('#artistview-template').html()),
 
   render: function(){
-    var gradient = parseInt(Math.pow(255,this.model.attributes.hotttnesss/100));
+    var percent = this.model.attributes.hotttnesss/100;
+    var gradient = 255-parseInt(Math.pow(255,percent*percent));
+    var opacity = percent*percent;
 
     this.$el.html(this.template(this.model.attributes));
-    this.$el.css({"background-color": "rgba("+gradient+",75,150,1)"});
+    this.$el.css({"background-color": "rgba(255,"+gradient+","+gradient+","+opacity+")"});
     this.$el.css({"color": "black"});
 
     return this;
@@ -32,16 +30,6 @@ var ArtistView = Backbone.View.extend({
   //     $( "#"+id ).slideUp();
   //   }
   // },
-
-  select: function(){
-    $( "#artist-list li" ).hover(
-      function() { 
-        $( this ).addClass("hovered");
-      }, function() {
-        $( this ).removeClass("hovered")
-      }
-    );
-  }
 });
 
 //** Collection **//
@@ -119,6 +107,8 @@ var addEventListeners = function(){
     $("#familiarity_nav").removeClass("active");
     $("#discovery_nav").addClass("active");
   });
+
+  $("#card").hoverHighlight('#C1BDBD');
 };
 
 var artist_collection, ArtistView, ArtistListView

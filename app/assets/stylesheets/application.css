@@ -13,19 +13,19 @@
 
  *= require_tree .
  */
+.header {
+  text-align: center;
+  margin-top: 70px;
+}
 
 .hovered {
-  background-color: lightblue;
+  background-color: black;
 }
 
 #card_name {
   font-size: 2em;
   text-align: center;
   margin-top: 75px;
-}
-
-#card_name p {
-  line-height: 1em;
 }
 
 #artist-list li {
@@ -38,7 +38,3 @@
   color: black;
 }
 
-.header {
-  text-align: center;
-  margin-top: 70px;
-}
