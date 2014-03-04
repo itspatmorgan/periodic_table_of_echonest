@@ -14,7 +14,7 @@ var ArtistView = Backbone.View.extend({
   template: Handlebars.compile($('#artistview-template').html()),
 
   render: function(){
-    var gradient = parseInt(Math.pow(255,this.model.attributes.hotttnesss));
+    var gradient = parseInt(Math.pow(255,this.model.attributes.hotttnesss/100));
 
     this.$el.html(this.template(this.model.attributes));
     this.$el.css({"background-color": "rgba("+gradient+",75,150,1)"});

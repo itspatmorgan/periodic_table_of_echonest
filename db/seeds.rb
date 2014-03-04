@@ -17,9 +17,9 @@ top_hottt_artists.each do |entry|
   artist = Artist.create(
     name: entry["name"],
     echonest_id: entry["id"],
-    hotttnesss: entry["hotttnesss"],
-    familiarity: entry["familiarity"],
-    discovery: entry["discovery"],
+    hotttnesss: entry["hotttnesss"].round(3)*100,
+    familiarity: entry["familiarity"].round(3)*100,
+    discovery: entry["discovery"].round(3)*100,
     location: entry["artist_location"]["location"],
     official_url: entry["urls"]["official_url"],
     lastfm_url: entry["urls"]["lastfm_url"],
