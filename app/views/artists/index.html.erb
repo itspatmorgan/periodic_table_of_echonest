@@ -7,9 +7,9 @@
 
   <!-- Sub Nav for Sorting list -->
   <dl class="sub-nav">
-    <dd id="hotttnesss_nav" class="active"><a href="#">Popularity</a></dd>
-    <dd id="discovery_nav"><a href="#">Emerging Artists</a></dd>
-    <dd id="familiarity_nav"><a href="#">Household Names</a></dd>
+    <dd id="hotttnesss_nav" class="active"><a href="#">Hottest Artists</a></dd>
+    <dd id="discovery_nav"><a href="#">Rising Artists</a></dd>
+    <dd id="familiarity_nav"><a href="#">Most Familiar Artists</a></dd>
   </dl>
 </div>
 
@@ -23,7 +23,9 @@
       <strong>{{ name }}</strong>
     </div>
     <div id={{echonest_id}} class="no_hov">
-      <a href={{lastfm_url}} target="blank"><img src="images/fi-social-lastfm.svg" width="50px"></a>
+      <p>{{location}}</p>
+      <a href={{official_url}} target="blank">Official Website</a></br>
+      <a href={{lastfm_url}} target="blank"><img src="images/fi-social-lastfm.svg" width="30px"> LastFM</a>
     </div>
   </div>
 </script>
