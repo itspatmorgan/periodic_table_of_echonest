@@ -26,6 +26,7 @@ top_hottt_artists.each do |entry|
     location: entry["artist_location"]["location"],
     official_url: entry["urls"]["official_url"],
     lastfm_url: entry["urls"]["lastfm_url"],
+    score: entry["hotttnesss_rank"] + entry["familiarity_rank"] + entry["discovery_rank"],
   )
 end
 

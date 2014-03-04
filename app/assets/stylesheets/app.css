@@ -38,7 +38,7 @@ body {
 }
 
 #card_name {
-  font-size: 1.5em;
+  font-size: 1.25em;
   text-align: center;
   margin-top: 30px;
   font-weight: bold;
@@ -46,6 +46,12 @@ body {
 
 #rank {
   position: absolute;
+  font-weight: bold;
+}
+
+#score {
+  position: relative;
+  float: right;
   font-weight: bold;
 }
 

@@ -17,9 +17,15 @@ var ArtistCollection = Backbone.Collection.extend({
   comparator: function(a, b){
     a = a.get(this.sort_key);
     b = b.get(this.sort_key);
+    if (this.sort_key === 'score') {
+      return a > b ? 1
+            : a < b ? -1
+            : 0;
+    } else { 
     return a < b ? 1
           : a > b ? -1
           : 0;
+    }
   },
 
   sortByField: function(fieldName){
@@ -79,6 +85,7 @@ var addEventListeners = function(){
     $("#hotttnesss_nav").addClass("active");
     $("#familiarity_nav").removeClass("active");
     $("#discovery_nav").removeClass("active");
+    $("#score_nav").removeClass("active");
   });
 
   $("#familiarity_nav").click(function(){
@@ -87,6 +94,7 @@ var addEventListeners = function(){
     $("#hotttnesss_nav").removeClass("active");
     $("#familiarity_nav").addClass("active");
     $("#discovery_nav").removeClass("active");
+    $("#score_nav").removeClass("active");
   });
 
   $("#discovery_nav").click(function(){
@@ -95,6 +103,16 @@ var addEventListeners = function(){
     $("#hotttnesss_nav").removeClass("active");
     $("#familiarity_nav").removeClass("active");
     $("#discovery_nav").addClass("active");
+    $("#score_nav").removeClass("active");
+  });
+
+  $("#score_nav").click(function(){
+    artist_collection.sortByField("score");
+    artist_list_view.render();
+    $("#hotttnesss_nav").removeClass("active");
+    $("#familiarity_nav").removeClass("active");
+    $("#discovery_nav").removeClass("active");
+    $("#score_nav").addClass("active");
   });
 };
 
