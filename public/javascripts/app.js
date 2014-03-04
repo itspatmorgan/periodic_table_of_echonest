@@ -30,9 +30,9 @@ var ArtistCollection = Backbone.Collection.extend({
 
 // ** Individual Artist View ** //
 var ArtistView = Backbone.View.extend({
-  events: {
-    'mouseover' : 'highlight'
-  },
+  // events: {
+  //   'mouseover' : 'highlight'
+  // },
 
   tagName: 'li',
 
@@ -50,9 +50,6 @@ var ArtistView = Backbone.View.extend({
     return this;
   },
 
-  highlight: function(){
-    $("#card").hoverHighlight('white');
-  },
   // showInfo: function(){ 
   //   var id = this.model.attributes.echonest_id;
 
@@ -85,7 +82,6 @@ var ArtistListView = Backbone.View.extend({
       self.renderArtist(artist);
     });
   },
-
 });
 
 var addEventListeners = function(){
@@ -113,10 +109,6 @@ var addEventListeners = function(){
     $("#familiarity_nav").removeClass("active");
     $("#discovery_nav").addClass("active");
   });
-
-  $("#artist-list li").mouseover(function(){
-    $("#artist-list li").addClass("hovered");
-  });
 };
 
 var artist_collection, ArtistView, ArtistListView
@@ -125,6 +117,8 @@ $(function(){
   artist_collection = new ArtistCollection();
   artist_view = new ArtistView();
   artist_list_view = new ArtistListView({collection: artist_collection, el: $('#artist-list')});
+  artist_list_view.$el.empty();
+  
 
   addEventListeners();
 });

@@ -8,13 +8,13 @@
 }
 
 #card_name {
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: center;
-  margin-top: 75px;
+  margin-top: 60px;
 }
 
 #artist-list li {
-  height: 250px;
+  height: 200px;
   border: 1px solid black;
   text-align: center;
 }
@@ -23,12 +23,12 @@
   color: black;
 }
 
-.sub-nav dd {
-  float: none;
+#artist-list li:not(.no_hov):hover {
+  background-color: rgba(255,255,255,.8) !important;
 }
 
-.hovered {
-  background-color: white;
+.sub-nav dd {
+  float: none;
 }
 
 body {

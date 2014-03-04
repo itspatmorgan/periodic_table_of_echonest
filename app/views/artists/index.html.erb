@@ -19,11 +19,11 @@
 <!-- Template for rendering artist view -->
 <script id='artistview-template' type='text/x-handlebars-template'>
   <div id="card">
-    <div id="card_name">
-      <a href={{lastfm_url}} target="blank"><strong>{{ name }}</strong></a>
+    <div id="card_name" class="no_hov">
+      <strong>{{ name }}</strong>
     </div>
-    <div id={{echonest_id}}>
-      <p>{{hotttnesss}}% | {{familiarity}}% | {{discovery}}%</p>
+    <div id={{echonest_id}} class="no_hov">
+      <a href={{lastfm_url}} target="blank"><img src="images/fi-social-lastfm.svg" width="50px"></a>
     </div>
   </div>
 </script>
