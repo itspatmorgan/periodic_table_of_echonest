@@ -2,6 +2,32 @@
 var Artist = Backbone.Model.extend({
 });
 
+//** Collection **//
+var ArtistCollection = Backbone.Collection.extend({
+  model: Artist,
+
+  url: '/',
+
+  initialize: function(){
+    this.fetch()
+  },
+
+  sort_key: 'hotttnesss',
+
+  comparator: function(a, b){
+    a = a.get(this.sort_key);
+    b = b.get(this.sort_key);
+    return a < b ? 1
+          : a > b ? -1
+          : 0;
+  },
+
+  sortByField: function(fieldName){
+    this.sort_key = fieldName;
+    this.sort();
+  },
+});
+
 // ** Individual Artist View ** //
 var ArtistView = Backbone.View.extend({
   events: {
@@ -36,32 +62,6 @@ var ArtistView = Backbone.View.extend({
   //     $( "#"+id ).slideUp();
   //   }
   // },
-});
-
-//** Collection **//
-var ArtistCollection = Backbone.Collection.extend({
-  model: Artist,
-
-  url: '/',
-
-  initialize: function(){
-    this.fetch()
-  },
-
-  sort_key: 'hotttnesss',
-
-  comparator: function(a, b){
-    a = a.get(this.sort_key);
-    b = b.get(this.sort_key);
-    return a < b ? 1
-          : a > b ? -1
-          : 0;
-  },
-
-  sortByField: function(fieldName){
-    this.sort_key = fieldName;
-    this.sort();
-  },
 });
 
 //** Artist List View **//
@@ -112,6 +112,10 @@ var addEventListeners = function(){
     $("#hotttnesss_nav").removeClass("active");
     $("#familiarity_nav").removeClass("active");
     $("#discovery_nav").addClass("active");
+  });
+
+  $("#artist-list li").mouseover(function(){
+    $("#artist-list li").addClass("hovered");
   });
 };
 

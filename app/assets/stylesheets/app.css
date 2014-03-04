@@ -4,7 +4,7 @@
   padding-top: 30px;
   padding-bottom: 30px;
   float: none;
-  background-color: lightgrey;
+  background: none;
 }
 
 #card_name {
@@ -25,4 +25,13 @@
 
 .sub-nav dd {
   float: none;
+}
+
+.hovered {
+  background-color: white;
+}
+
+body {
+  background: url("/images/concert_1.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
