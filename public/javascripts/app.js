@@ -5,7 +5,7 @@ var Artist = Backbone.Model.extend({
 // ** Individual Artist View ** //
 var ArtistView = Backbone.View.extend({
   events: {
-    "click" : "showInfo",
+    // "click" : "showInfo",
     "mouseover" : "select"
   },
 
@@ -14,23 +14,24 @@ var ArtistView = Backbone.View.extend({
   template: Handlebars.compile($('#artistview-template').html()),
 
   render: function(){
-    var hot = parseInt(Math.pow(255,this.model.attributes.hotttnesss));
+    var gradient = parseInt(Math.pow(255,this.model.attributes.hotttnesss));
+
     this.$el.html(this.template(this.model.attributes));
-    this.$el.css({"background-color": "rgba("+hot+",75,150,1)"});
-    // this.$el.css('background-image', 'url(' + this.model.attributes.photo_url + ')');
-    // this.$el.css('background-size', 'contain');
+    this.$el.css({"background-color": "rgba("+gradient+",75,150,1)"});
+    this.$el.css({"color": "black"});
+
     return this;
   },
 
-  showInfo: function(){ 
-    var id = this.model.attributes.echonest_id
+  // showInfo: function(){ 
+  //   var id = this.model.attributes.echonest_id;
 
-    if ( $( "#"+id ).is( ":hidden" ) ) {
-      $( "#"+id ).show( "slow" );
-    } else {
-      $( "#"+id ).slideUp();
-    }
-  },
+  //   if ( $( "#"+id ).is( ":hidden" ) ) {
+  //     $( "#"+id ).slideDown("fast");
+  //   } else {
+  //     $( "#"+id ).slideUp();
+  //   }
+  // },
 
   select: function(){
     $( "#artist-list li" ).hover(

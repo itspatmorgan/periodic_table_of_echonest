@@ -24,9 +24,18 @@
   margin-top: 75px;
 }
 
+#card_name p {
+  line-height: 1em;
+}
+
 #artist-list li {
   height: 250px;
   border: 1px solid black;
+  text-align: center;
+}
+
+#artist-list li a {
+  color: black;
 }
 
 .header {
