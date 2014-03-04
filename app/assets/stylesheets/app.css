@@ -1,3 +1,8 @@
+body {
+  background: url("/images/concert_1.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
 #header {
   text-align: center;
   margin-top: 40px;
@@ -7,10 +12,15 @@
   background: none;
 }
 
-#card_name {
-  font-size: 1.5em;
-  text-align: center;
-  margin-top: 30px;
+.sub-nav dd {
+  float: none;
+}
+.sub-nav dd a {
+  color: black;
+  font-weight: bold;
+}
+.sub-nav dd.active a {
+  background: black;
 }
 
 #artist-list li {
@@ -27,19 +37,17 @@
   background-color: rgba(255,255,255,.8) !important;
 }
 
-.sub-nav dd {
-  float: none;
-}
-.sub-nav dd a {
-  color: black;
+#card_name {
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 30px;
   font-weight: bold;
 }
-.sub-nav dd.active a {
-  background: black;
+
+#rank {
+  position: absolute;
+  font-weight: bold;
 }
 
-body {
-  background: url("/images/concert_1.jpg") no-repeat center center fixed;
-  background-size: cover;
-}
+
 

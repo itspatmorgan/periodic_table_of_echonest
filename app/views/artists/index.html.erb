@@ -17,11 +17,10 @@
 
 <!-- Template for rendering artist view -->
 <script id='artistview-template' type='text/x-handlebars-template'>
+  <div id="rank">{{hotttnesss_rank}}</div>
   <div id="card">
-    <div id="card_name" class="no_hov">
-      <strong>{{ name }}</strong>
-    </div>
-    <div id={{echonest_id}} class="no_hov">
+    <div id="card_name" class="no_hov">{{ name }}</div>
+    <div class="no_hov">
       <p>{{location}}</p>
       <a href={{official_url}} target="blank">Official Website</a></br>
       <a href={{lastfm_url}} target="blank"><img src="images/fi-social-lastfm.svg" width="30px"> LastFM</a>
