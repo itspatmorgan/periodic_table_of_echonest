@@ -1,0 +1,28 @@
+#header {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  float: none;
+  background-color: lightgrey;
+}
+
+#card_name {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 75px;
+}
+
+#artist-list li {
+  height: 250px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+#artist-list li a {
+  color: black;
+}
+
+.sub-nav dd {
+  float: none;
+}

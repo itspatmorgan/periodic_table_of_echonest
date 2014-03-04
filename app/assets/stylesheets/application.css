@@ -10,31 +10,6 @@
  *
  *= require_self
  *= require foundation_and_overrides
-
+ *= require app
  *= require_tree .
  */
-.header {
-  text-align: center;
-  margin-top: 70px;
-}
-
-.hovered {
-  background-color: black;
-}
-
-#card_name {
-  font-size: 2em;
-  text-align: center;
-  margin-top: 75px;
-}
-
-#artist-list li {
-  height: 250px;
-  border: 1px solid black;
-  text-align: center;
-}
-
-#artist-list li a {
-  color: black;
-}
-
