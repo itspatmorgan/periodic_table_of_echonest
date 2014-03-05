@@ -12,8 +12,8 @@ gem 'jquery-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
-# Tap into the Echonest API for music data
-gem 'echowrap', '~> 0.1.2'
+# Potential gem for tapping into the Echonest API
+# gem 'echowrap', '~> 0.1.2'
 
 # Directly call API
 gem 'httparty'
@@ -26,7 +26,6 @@ group :test do
 end
 
 group :development do
-  gem 'rspec-rails' 
   gem 'pry'
   gem 'pry-nav'
 end
