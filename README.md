@@ -22,7 +22,7 @@ I thought these metrics might provide a good foundation for a new chart-based mu
 ![echonest_metrics](https://www.evernote.com/shard/s82/sh/0236db35-35fb-45d2-aca3-e2b2a8ae033b/58b121867acb0fd4a4890b553777efb8/deep/0/echonest_metrics.png "Echonest Metrics")
 
 #### How should I read the charts?
-**See the info associated with each screenshot below**  
+*See the info associated with each screenshot below*  
   
 ####Basic specs
 
